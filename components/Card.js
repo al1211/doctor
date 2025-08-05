@@ -1,36 +1,42 @@
-import { FaShoppingCart, FaVials, FaFileMedical, FaNewspaper, FaBriefcaseMedical } from "react-icons/fa";
-import { MdChat } from 'react-icons/md';
+import {
+  FaShoppingCart,
+  FaFileMedical,
+  FaNewspaper,
+  FaBriefcaseMedical,
+} from "react-icons/fa";
+import { MdChat } from "react-icons/md";
 import { BiTestTube } from "react-icons/bi";
+
 const card = [
   {
     icon: <MdChat size={30} />,
     title: "Consult with a doctor",
-    a:true
+    a: true,
   },
   {
     icon: <FaShoppingCart size={30} />,
     title: "Order Medicines",
-     a:true
+    a: true,
   },
   {
     icon: <FaFileMedical size={30} />,
     title: "View medical records",
-     a:true
+    a: true,
   },
   {
     icon: <BiTestTube size={30} />,
     title: "Book test",
-     a:true
+    a: true,
   },
   {
     icon: <FaNewspaper size={30} />,
     title: "Read articles",
-     a:true
+    a: true,
   },
   {
     icon: <FaBriefcaseMedical size={30} />,
     title: "For healthcare providers",
-    a:false
+    a: false,
   },
 ];
 
@@ -41,7 +47,9 @@ export default function Card() {
         {card.map((service, idx) => (
           <div
             key={idx}
-            className={ `${service.a ? "border-r-1 border-white":""} "  flex flex-col items-center justify-center gap-2 shadow-md"`}
+            className={`flex flex-col items-center justify-center gap-2 px-2 py-4   ${
+              service.a ? "border-r border-white/20" : ""
+            }`}
           >
             <div className="text-white">{service.icon}</div>
             <h3 className="text-sm font-semibold">{service.title}</h3>
